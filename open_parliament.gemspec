@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.md",
+    "README.md",
     "Rakefile",
     "lib/open_parliament.rb",
     "lib/open_parliament/bill.rb",
