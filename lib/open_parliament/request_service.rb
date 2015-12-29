@@ -9,9 +9,17 @@ module OpenParliament
       resp = RestClient::Request.execute(method: method, 
                                          url: full_url,
                                          timeout: 10,
-                                         headers: { accept: :json, params: build_params(params) }
+                                         headers: build_headers(params),
                                          )
       JSON.parse(resp)
+    end
+
+    def self.build_headers(params)
+      {
+        "API-Version" => "v1",
+        accept: :json,
+        params: build_params(params),
+      }
     end
 
     def self.build_params(params)
