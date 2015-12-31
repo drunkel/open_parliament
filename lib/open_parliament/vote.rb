@@ -6,7 +6,16 @@ module OpenParliament
     end
 
     def self.valid_filters
-      []
+      [
+        :bill,
+        :date,
+        :nay_total,
+        :number,
+        :paired_total,
+        :result,
+        :session,
+        :yea_total,
+      ]
     end
 
   end

@@ -6,7 +6,12 @@ module OpenParliament
     end
 
     def self.valid_filters
-      []
+      [
+        :family_name,
+        :given_name,
+        :include,
+        :name,
+      ]
     end
 
   end

@@ -6,7 +6,7 @@ module OpenParliament
     end
 
     def self.valid_filters
-      []
+      [:session]
     end
   end
 end

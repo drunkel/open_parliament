@@ -6,7 +6,17 @@ module OpenParliament
     end
 
     def self.valid_filters
-      [:introduced] # TODO
+      [
+        :introduced,
+        :law,
+        :legisinfo_id,
+        :number,
+        :private_member_bill,
+        :session,
+        :sponsor_politician,
+        :sponsor_politician_membership,
+        :status_code,
+      ]
     end
 
   end
