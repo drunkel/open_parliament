@@ -22,8 +22,22 @@ OpenParliament.votes => [OpenParliament::Vote...]
 vote = OpenParliament.votes.first
 vote.result => "Passed"
 vote.description["en"] => "That the Bill be now read a third time and do pass."
+```
 
-# Pagination with limit/offset. Defaults to limit:20, offset:0
+###Filters
+Filters listed in the https://openparliament.ca/api/ resource pages are supported.
+```ruby
+OpenParliament.bills(private_member_bill: true)
+ => [#<OpenParliament::Bill ...]
+ 
+OpenParliament.politicians(family_name: 'Trudeau')
+ => [#<OpenParliament::Politician url="/politicians/justin-trudeau/", name="Justin Trudeau">] 
+ ```
+ 
+ 
+###Pagination
+```ruby
+ # Pagination with limit/offset. Defaults to limit:20, offset:0
 first_bill = OpenParliament.bills(limit: 1)
 second_bill = OpenParliament.bills(limit: 1, offset: 1)
 ```
