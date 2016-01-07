@@ -14,37 +14,27 @@ module OpenParliament
   API_URL = 'http://api.openparliament.ca'
 
   def self.bills(params = {})
-    url = "/bills/"
-    json = RequestService.make_request(url: url, method: :get, params: params)
-    bills = json["objects"]
-    bills.map { |bill_json| Bill.new(bill_json) }
+    bills_service = RequestService.new(Bill)
+    bills_service.get(params)
   end
 
   def self.committees(params = {})
-    url = "/committees/"
-    json = RequestService.make_request(url: url, method: :get, params: params)
-    committees = json["objects"]
-    committees.map { |committee_json| Committee.new(committee_json) }
+    committees_service = RequestService.new(Committee)
+    committees_service.get(params)
   end
 
   def self.debates(params = {})
-    url = "/debates/"
-    json = RequestService.make_request(url: url, method: :get, params: params)
-    debates = json["objects"]
-    debates.map { |debate_json| Debate.new(debate_json) }
+    debates_service = RequestService.new(Debate)
+    debates_service.get(params)
   end
 
   def self.votes(params = {})
-    url = "/votes/"
-    json = RequestService.make_request(url: url, method: :get, params: params)
-    votes = json["objects"]
-    votes.map { |vote_json| Vote.new(vote_json) }
+    votes_service = RequestService.new(Vote)
+    votes_service.get(params)
   end
 
   def self.politicians(params = {})
-    url = "/politicians/"
-    json = RequestService.make_request(url: url, method: :get, params: params)
-    politicians = json["objects"]
-    politicians.map { |politician_json| Politician.new(politician_json) }
+    politicians_service = RequestService.new(Politician)
+    politicians_service.get(params)
   end
 end
